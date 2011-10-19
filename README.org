@@ -1,0 +1,44 @@
+* Wikiview
+  Wikiview intends to be a simple interface for reading wikipedia
+  articles from the data "dumps".  These compressed data dumps are
+  regularly generated and available for download.
+
+* Modules
+  
+** Finding the article
+   The dump is a bzip2 compressed xml.  For now, let's use only the
+   title and the body of each article, and ignore the other metadata.
+
+   We need to build an index and various sorts of ways to find a
+   desired article.  We probably use the following query types:
+   - full name (the only one for the beginning)
+   - nearly full name (ignore case and be fuzzy about punctuations)
+   - partial search
+   - regex
+   - fuzzy search (stem the words, [partially] ignore ordering, etc.)
+
+** Parsing and presenting the article
+   Wikipedia articles use the wiki markup, which we need to parse and
+   interpret. We also need to define a presentation format (HTML and
+   probably some js) to display in a web browser or a custom
+   WebKit-based interface.
+
+* Data
+
+** Wikipedia Dumps
+   look for "enwiki", often near the bottom of
+   http://dumps.wikimedia.org/backup-index.html
+   In that page, look for *-pages-articles.xml.bz2,
+   for example:
+   http://dumps.wikimedia.org/enwiki/20111007/enwiki-20111007-pages-articles.xml.
+   [latest as of Oct 17, 2011. About is 7.2GB in size]
+   
+   Here is probably the link to the latest one, although I am not if
+   this file is being written or it is done.
+   http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
+
+** Look at, and get samples from:
+   http://svn.wikimedia.org/viewvc/mediawiki/trunk/parsers/
+   
+   e.g.: 
+   svn co http://svn.wikimedia.org/svnroot/mediawiki/trunk/parsers/graveyard/flexbisonparse
