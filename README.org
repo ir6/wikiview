@@ -30,7 +30,7 @@
    http://dumps.wikimedia.org/backup-index.html
    In that page, look for *-pages-articles.xml.bz2,
    for example:
-   http://dumps.wikimedia.org/enwiki/20111007/enwiki-20111007-pages-articles.xml.
+   http://dumps.wikimedia.org/enwiki/20111007/enwiki-20111007-pages-articles.xml.bz2
    [latest as of Oct 17, 2011. About is 7.2GB in size]
    
    Here is probably the link to the latest one, although I am not if
